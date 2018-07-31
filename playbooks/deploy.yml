@@ -1,0 +1,17 @@
+--- 
+- hosts: httpd
+  become: yes
+  tasks: 
+  - name: deploy app benary 
+    copy: 
+      src: /new/apps/hello 
+      dest: /var/www/html/hello
+    tags: 
+      - webdeploy
+- hosts: db
+  become: yes
+  tasks: 
+  - name: deploy db script
+    copy: src="/home/user/apps/script.sql" dest="/opt/db/scripts/script.sql"
+    tags: 
+      - dbdeploy
