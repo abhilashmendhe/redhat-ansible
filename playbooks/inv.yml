@@ -1,0 +1,14 @@
+all:
+  hosts: 
+    ansiblenode1.example.local
+  children: 
+    httpd:
+      hosts:
+        ansiblenode1.example.local
+        ansiblenode2.example.local
+    webservers:
+      hosts: 
+        ansiblenode1.example.local
+    labservers:
+      hosts: 
+        ansiblenode[2:6].example.local
