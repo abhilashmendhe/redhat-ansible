@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  become: yes
+  tasks: 
+  - name: get files
+    get_url: url="http://{{item}}/index.html" dest="/tmp/{{item}}"
+    register: res
+  - debug: msg=res
+    ignore_errors: yes
+    with_items: 
+      - ansiblenode1.example.local
+      - ansiblenode2.example.local
+      - ansiblenode3.example.local
