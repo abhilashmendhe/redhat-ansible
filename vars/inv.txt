@@ -1,0 +1,2 @@
+['ansiblenode1.example.local', 'ansiblemaster.example.local']
+ansiblenode1.example.local ansiblemaster.example.local
