@@ -1,0 +1,6 @@
+---
+- hosts: localhost
+  tasks: 
+  - name: deploy local net file
+    template: src=/home/testuser/redhat-ansible/playbooks/network.j2 dest=/home/testuser/network.txt
+
